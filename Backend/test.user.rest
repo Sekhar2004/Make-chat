@@ -1,0 +1,37 @@
+@host = http://localhost:5000
+
+### Test connection
+GET {{host}}/
+Content-Type: application/json
+
+### Register a new user
+POST {{host}}/api/user/register
+Content-Type: application/json
+
+{
+  "name": "parth",
+  "email": "parth@example.com",
+  "password": "password123"
+}
+
+### Login with existing user
+POST {{host}}/api/user/login
+Content-Type: application/json
+
+{
+  "email": "noddy@example.com",
+  "password": "password123"
+}
+
+### Get all user
+GET {{host}}/api/user/all
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDc1NWIzN2JmN2RiMTBjYTlhOTciLCJpYXQiOjE3MDY4NzQ3MTIsImV4cCI6MTcwNjk2MTExMn0.PwCqdjl3HISYSNJgmbUqrRInRooduCSuVpNQdPmVdnk
+
+
+### Get user by name or email
+GET {{host}}/api/user?search=harsh
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDgyM2IzN2JmN2RiMTBjYTlhYTkiLCJpYXQiOjE3MDY4OTM5ODgsImV4cCI6MTcwNjk4MDM4OH0.FGckxj_VGsXOcc54pEalKAVV-louq1pd21DGyyw1NGM
+
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDc1NWIzN2JmN2RiMTBjYTlhOTciLCJpYXQiOjE3MDY4NzQ3MTIsImV4cCI6MTcwNjk2MTExMn0.PwCqdjl3HISYSNJgmbUqrRInRooduCSuVpNQdPmVdnk

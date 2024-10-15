@@ -1,0 +1,55 @@
+@host = http://localhost:5000
+
+### access a chat
+POST {{host}}/api/chat/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDc1NWIzN2JmN2RiMTBjYTlhOTciLCJpYXQiOjE3MDY4NzQ3MTIsImV4cCI6MTcwNjk2MTExMn0.PwCqdjl3HISYSNJgmbUqrRInRooduCSuVpNQdPmVdnk
+
+{
+  "userId": "65bcd823b37bf7db10ca9aa9"
+}
+
+### Get all chats of user
+GET {{host}}/api/chat
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDgyM2IzN2JmN2RiMTBjYTlhYTkiLCJpYXQiOjE3MDcwMzI3MTgsImV4cCI6MTcwNzExOTExOH0.0FeHyp4i9Bsp1a2cJLuwqLkSdcUfZUfBr63hUuLJYg0
+
+### create a group
+POST {{host}}/api/chat/createGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDc1NWIzN2JmN2RiMTBjYTlhOTciLCJpYXQiOjE3MDY4NzQ3MTIsImV4cCI6MTcwNjk2MTExMn0.PwCqdjl3HISYSNJgmbUqrRInRooduCSuVpNQdPmVdnk
+
+{
+  "groupName": "Test Group",
+  "users": "[\"65bcd823b37bf7db10ca9aa9\", \"65bcd0ade4fdf30b72b3306a\"]"
+}
+
+### rename a group
+PUT {{host}}/api/chat/renameGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDgyM2IzN2JmN2RiMTBjYTlhYTkiLCJpYXQiOjE3MDcwNjI5OTcsImV4cCI6MTcwNzE0OTM5N30.a24R_dAQGLZEAvS9mplSH5C0Tdz6_MX_zJr5AJfKcxM
+
+{
+  "chatId": "65bd01c4f0f5c88b7e57a0db",
+  "newGroupName": "Test Group hc"
+}
+
+### add to group
+PUT {{host}}/api/chat/addToGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDc1NWIzN2JmN2RiMTBjYTlhOTciLCJpYXQiOjE3MDY4NzQ3MTIsImV4cCI6MTcwNjk2MTExMn0.PwCqdjl3HISYSNJgmbUqrRInRooduCSuVpNQdPmVdnk
+
+{
+  "chatId": "65bd01c4f0f5c88b7e57a0db",
+  "userId": "65bd055a0f8a1fa4cb3ba448"
+}
+
+### remove from group
+PUT {{host}}/api/chat/removeFromGroup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJjZDc1NWIzN2JmN2RiMTBjYTlhOTciLCJpYXQiOjE3MDY4NzQ3MTIsImV4cCI6MTcwNjk2MTExMn0.PwCqdjl3HISYSNJgmbUqrRInRooduCSuVpNQdPmVdnk
+
+{
+  "chatId": "65bd01c4f0f5c88b7e57a0db",
+  "userId": "65bd055a0f8a1fa4cb3ba448"
+}

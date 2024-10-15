@@ -1,0 +1,8 @@
+// const setRandomColor = () => {
+//     const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+//     document.documentElement.style.setProperty('--primary', randomColor);
+// }
+// primary: {
+//     DEFAULT: "var(--primary, #23262f)",  // Default primary color
+//     foreground: "hsl(var(--primary-foreground))",
+// },
